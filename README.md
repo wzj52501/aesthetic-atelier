@@ -21,7 +21,7 @@ high-aesthetic-skills-pack/
 
 **High Aesthetic Image Expert** is the entry point for any image brief. It applies a fixed aesthetic core — restraint, relationship-first composition, color from content, sparse decoration, negative space as design, deconstruct-then-reconstruct, clean delivery — and runs a mandatory self-review before anything ships. Specialty briefs route to the two sub-skills.
 
-**Matching Couple Avatar** takes the user's portrait and delivers one new standalone partner portrait that pairs with it (couple set / matching profile pictures). The source file is never modified. Generation is driven by pixel-level locks measured from the source — stroke material, face recipe, palette, background — so the partner reads as the same illustrator's hand with a new identity, and forms couplet-logic complementarity rather than a mirror clone.
+**Matching Couple Avatar** takes the user's portrait and draws **one** new partner portrait to pair with it (couple set / matching profile pictures). It is not a two-image batch — the portrait you supply is never redrawn or altered, only the missing half is drawn. Generation is driven by pixel-level locks measured from the source — stroke material, face recipe, palette, background — so the partner reads as the same illustrator's hand with a new identity, and forms couplet-logic complementarity rather than a mirror clone.
 
 **Photo Style Transfer Poster** turns one photo into one finished styled image of the same moment and space — a styled reconstruction, never the photo itself and never a before/after layout. Two hard locks gate acceptance: every important person, animal, and pose-critical prop stays fully in frame, and the source's spatial structure stays intact. Nine print and illustration recipes are available.
 
@@ -62,9 +62,11 @@ When no vibe is given, photo content decides: architecture or street vista → T
 
 ## Demo gallery
 
-Both sub-skills treat these demos as their **regression suite** — reopen them whenever quality slips. The generation prompts for every image below are in [Generation prompts](#generation-prompts).
+Both sub-skills treat these demos as their **regression suite** — reopen them whenever quality slips. See [Generation prompts](#generation-prompts) for input-to-output examples.
 
 ### Couple avatars — `demo/avatar_demo/`
+
+> **One image in, one image out.** This is not a two-image batch. The portrait you hand over is never redrawn or altered — the skill draws a single new partner avatar to sit opposite it. The usual case is that you only hold one half of the pair: your own portrait, or a photo of a crush, where the other half has to be drawn to match.
 
 `L`/`R` are **set IDs, not "left/right of frame"** — facing direction is read from pixels.
 
@@ -131,87 +133,27 @@ Recipes ⑤ travel-sketch, ⑦ jp-line, and ⑨ ink are the strictest on **space
 
 ## Generation prompts
 
-> **Provenance.** The original generation prompts were not archived alongside these images. The prompts below are **reconstructed from this pack's own prompt skeletons** — Matching Couple Avatar Appendix A and Photo Style Transfer Poster §6d — filled with each demo's documented teaching notes. Values in `{braces}` must be measured from the actual source image before use; that measurement step is the point of both manuals.
+What the interaction actually looks like: the image you hand over, the brief you type, and what comes back.
 
-### Couple avatar prompts
+### Matching couple avatar
 
-Shape per §6.2: task → facing and couplet plan → spatial % → stroke → face → background → tone → clean delivery. All four demos use this skeleton; the per-set lines are what differ.
+| Input — `demo/avatar_demo/3L.jpg` | Output — `demo/avatar_demo/3L_gen.jpg` |
+|:---:|:---:|
+| <img src="demo/avatar_demo/3L.jpg" width="240"> | <img src="demo/avatar_demo/3L_gen.jpg" width="240"> |
 
-```
-TASK: Independent partner portrait for couple PFP.
-Leave the source portrait file unchanged; deliver a new partner file only.
-FORMAT: same W×H as source; one person; clean finished square.
+> Here's an avatar. I want a matching couple avatar for it.
 
-COUPLE PAIRING:
-- Source faces {DIR} → partner faces {OPP}.
-- Complementary plan: {robe value / prop / motif split}.
-- Shared drawing hand with the source (same dialect, new identity).
+The source file is left untouched. The output is a single new portrait, drawn in the same hand and facing the opposite way so the two read as a pair.
 
-SPATIAL LOCKS:
-- Face height ≈ {x}%H; head ≈ {y}%H; negative-space habits as source.
-- Landmark gaps: {eye/nose/mouth spacing from crops}.
-- Bun apex and chin both inside frame with safe air.
+### Style transfer — Pressed Flower
 
-STROKE LOCKS (primary):
-- Match hair / profile / lash crops: {clumped variable grey digital sketch}.
-- Line color family {charcoal grey}; weight {tapered, uneven}.
+| Input — `demo/poster_demo2/raw.jpg` | Output — `demo/poster_demo2/style-04-pressed-flower.jpg` |
+|:---:|:---:|
+| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> |
 
-FACE LOCKS:
-- Eye / nose / mouth recipe from crops: {dash mouth / pale iris / lash clumping}.
+> Here's a photo. I want a pressed-flower style literary poster from it.
 
-BACKGROUND LOCKS:
-- Outer-side foliage or wash placement: {describe}.
-- Open-field sparse motif if the source has one.
-
-TONE LOCKS:
-- Global luma and cast ≈ source; clothing value opposition limited to garments.
-
-CONTENT: clearly new identity and props vs any exemplar; same dialect.
-DELIVERY: one finished square, print-ready, no text/UI/guide boxes.
-```
-
-| Set | Per-set lines to substitute |
-|---|---|
-| 1 | `COUPLE PAIRING: opposite facing; shared motif language.` `FACE LOCKS: keep hands as flat as the source when the source is flat.` |
-| 2 | `STROKE/FEATURE LOCKS: stronger local feature matching — cloth folds, hair masses.` `BACKGROUND LOCKS: background shapes stay in the source's simplification family.` |
-| 3 | `COUPLE PAIRING: hoodie/value opposition.` `TONE LOCKS: hold global luma stable — value shift limited to the garment.` `SPATIAL LOCKS: keep face scale and stroke consistent under larger clothing masses.` |
-| 4 | `TONE LOCKS: high-key cool field.` `COUPLE PAIRING: profile pair; pale-to-dark robe opposition; sparse open-field mark vs floral/hair props.` `BACKGROUND LOCKS: soft unoutlined foliage washes.` |
-
-### Style-transfer prompts
-
-The §6d skeleton is shared by every recipe; only the `RECIPE` line changes. Prompts are written for **batch B** (valley back-view) since its subject is documented; for **batch A** (coastal / street) swap in the inventory and spatial map below.
-
-```
-Create ONE finished styled reconstruction of the reference photograph.
-Deliver styled reconstruction only — a single finished image.
-Match reference aspect ratio {W:H}; use 4:3 only when the source is already near 4:3.
-
-SUBJECT INVENTORY (every item fully in frame with safe margin):
-- Centered female subject, back to camera; full figure head-to-hem as in source.
-- {any companions, animals, or pose-critical props — keep whole}
-
-SPATIAL MAP (same moment, same space — medium change only):
-- Depth: near ridge → mid slope → far valley floor → sky.
-- Subject centered at mid-scale; gaze direction toward the valley.
-- Keep horizon height and primary left–right structure.
-
-RECIPE: {recipe language copied from the poster sub-skill's recipe card}
-IDENTITY/MEMORY: {back-view silhouette, hair, wardrobe, valley profile}
-COLOR: from the photo, reduced per recipe.
-TEXT: {recipe text rule}
-ACCEPTANCE: subjects complete; space intact; recipe dialect clear; styled only.
-```
-
-**Batch A substitution** — replace the inventory and map blocks with:
-
-```
-SUBJECT INVENTORY: {every pedestrian and animal fully in frame with safe margin}
-SPATIAL MAP: road/path axis {direction}; lamp or primary light {position};
-pedestrian groups {count, positions, facing}; depth layers FG/MG/BG/sky;
-place identity and primary left–right structure.
-```
-
-Prompt language to avoid (from both atlases): leading with genre or mood tags, `same filter as ref`, `pretty poster`, and any instruction that trades spatial anchors for decoration.
+Same photo, same moment and space: the subjects stay complete and the layout stays put — only the medium changes. Swap the style name for any of the nine recipes in the table above.
 
 ---
 
