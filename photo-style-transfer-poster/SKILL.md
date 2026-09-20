@@ -14,8 +14,8 @@ description: >-
 # Photo Style Transfer Poster
 
 > **Pack demos (required reading when available):**  
-> `high-aesthetic-skills-pack/poster_demo1/` — coastal / street-memory batch (`raw` + `style-01`…`style-09`)  
-> `high-aesthetic-skills-pack/poster_demo2/` — valley back-view batch (`raw.jpg` + `style-01`…`style-09`)  
+> `high-aesthetic-skills-pack/demo/poster_demo1/` — coastal / street-memory batch (`raw.jpg` + `style-01`…`style-09`)  
+> `high-aesthetic-skills-pack/demo/poster_demo2/` — valley back-view batch (`raw.jpg` + `style-01`…`style-09`)  
 > Use demos as regression memory for **complete subjects** and **spatial fidelity** — the two axes this skill exists to protect.
 
 This skill is the specialty path under High Aesthetic Image Expert for **photo → styled reconstruction**. It is intentionally long: short “vibe transfer” instructions cause cropped people and rewritten streets. Read the hard locks, inventory subjects + spatial map, then generate.
@@ -168,8 +168,8 @@ Travel Journal Sketch and Photo→Ink require **especially high** spatial fideli
 
 | Demo | Path | Source | Outputs |
 |---|---|---|---|
-| poster_demo1 | `high-aesthetic-skills-pack/poster_demo1/` | `raw` | `style-01-riso.png` … `style-09-ink-sketch.png` |
-| poster_demo2 | `high-aesthetic-skills-pack/poster_demo2/` | `raw.jpg` | `style-01-riso.png` … `style-09-ink-sketch.png` |
+| poster_demo1 | `high-aesthetic-skills-pack/demo/poster_demo1/` | `raw.jpg` | `style-01-riso.jpg` … `style-09-ink-sketch.jpg` |
+| poster_demo2 | `high-aesthetic-skills-pack/demo/poster_demo2/` | `raw.jpg` | `style-01-riso.jpg` … `style-09-ink-sketch.jpg` |
 
 Recipe index (filenames):
 
@@ -178,7 +178,7 @@ Recipe index (filenames):
 ### 4.2 How to study a demo
 
 1. Open `raw` / `raw.jpg` — build **subject inventory** (§1.3) + **spatial map** (§2.4).  
-2. Open each `style-0N-*.png` — check subjects complete? axis/lamp/groups/depth intact?  
+2. Open each `style-0N-*.jpg` — check subjects complete? axis/lamp/groups/depth intact?  
 3. Catalogue failures by recipe — some recipes (⑤ travel-sketch, ⑦ jp-line, ⑨ ink) are stricter on space; whitespace-heavy recipes (①⑧) fail more often on crops.  
 4. When regenerating for a user, use the same checklist before shipping.
 
