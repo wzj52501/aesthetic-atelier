@@ -217,6 +217,8 @@ Prompt language to avoid (from both atlases): leading with genre or mood tags, `
 
 ## Installation
 
+> **TL;DR — just tell your agent *"install this repo."*** It clones the pack and links the skills into its own skills directory; Claude Code, Cursor, and Codex each know where theirs is. Everything below is the manual version, for when you want to control exactly where the files land.
+
 Each skill folder is self-contained: the folder name is the skill slug and `SKILL.md` carries YAML frontmatter (`name`, `description`) used for discovery and routing. The format follows the [Agent Skills](https://agentskills.io) standard, so the same folders work across tools.
 
 ### 1. Clone the pack
