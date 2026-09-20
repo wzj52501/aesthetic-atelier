@@ -6,10 +6,10 @@ The pack's voice is **positive locks**: state what to keep and deliver. Emphatic
 
 ```
 high-aesthetic-skills-pack/
-├── high-aesthetic-image-expert/SKILL.md      ← the skill (92 lines)
-├── matching-couple-avatar/SKILL.md           ← sub-skill 1 (996 lines)
-├── photo-style-transfer-poster/SKILL.md      ← sub-skill 2 (627 lines)
-└── demo/                                     ← regression image sets (32 images)
+├── high-aesthetic-image-expert/SKILL.md      ← the skill
+├── matching-couple-avatar/SKILL.md           ← sub-skill 1
+├── photo-style-transfer-poster/SKILL.md      ← sub-skill 2
+└── demo/                                     ← regression image sets
     ├── avatar_demo/        couple-PFP set (1L–4L)
     ├── poster_demo1/       style-transfer batch A (raw + 9 styles)
     └── poster_demo2/       style-transfer batch B (raw + 9 styles)
@@ -24,8 +24,6 @@ high-aesthetic-skills-pack/
 **Matching Couple Avatar** takes the user's portrait and delivers one new standalone partner portrait that pairs with it (couple set / matching profile pictures). The source file is never modified. Generation is driven by pixel-level locks measured from the source — stroke material, face recipe, palette, background — so the partner reads as the same illustrator's hand with a new identity, and forms couplet-logic complementarity rather than a mirror clone.
 
 **Photo Style Transfer Poster** turns one photo into one finished styled image of the same moment and space — a styled reconstruction, never the photo itself and never a before/after layout. Two hard locks gate acceptance: every important person, animal, and pose-critical prop stays fully in frame, and the source's spatial structure stays intact. Nine print and illustration recipes are available.
-
-Both sub-skill manuals are deliberately long, and each explains why: short "vibe" skills produce exactly the failures catalogued in the demo atlases below.
 
 ---
 
