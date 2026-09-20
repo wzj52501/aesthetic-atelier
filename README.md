@@ -9,12 +9,22 @@ The pack's voice is **positive locks**: state what to keep and deliver. Emphatic
 ```
 aesthetic-atelier/
 ├── high-aesthetic-image-expert/SKILL.md      ← the skill
-├── matching-couple-avatar/SKILL.md           ← sub-skill 1
-├── photo-style-transfer-poster/SKILL.md      ← sub-skill 2
+├── matching-couple-avatar/                   ← sub-skill 1
+│   ├── SKILL.md          thin entry + loading protocol
+│   ├── CORE.md           always loaded — the law
+│   ├── STUDY.md          on demand — measurement protocol
+│   ├── ATLAS.md          on demand — failure atlas F1–F8
+│   └── APPENDIX.md       on demand — templates, operator notes
+├── photo-style-transfer-poster/              ← sub-skill 2
+│   ├── SKILL.md          thin entry + loading protocol
+│   ├── CORE.md           always loaded — the law
+│   ├── ATLAS.md          on demand — failure atlas F1–F7
+│   └── recipes/          nine cards, load one at a time
 └── demo/                                     ← regression image sets
+    ├── MANIFEST.md         per-file role — the authority
     ├── avatar_demo/        couple-PFP set (1L–4L)
-    ├── poster_demo1/       style-transfer batch A (raw + 9 styles)
-    ├── poster_demo2/       style-transfer batch B (raw + 9 styles)
+    ├── poster_demo1/       style-transfer batch A (raw + 9 styles + 9 aspect-matched)
+    ├── poster_demo2/       style-transfer batch B (raw + 9 styles + 9 aspect-matched)
     └── bear.jpg            general-brief example
 ```
 
@@ -32,6 +42,17 @@ The two sub-skills are **specialised training for two recurring task types** —
 - **Photo Style Transfer Poster** turns one photo into one finished styled image of the same moment and space — a styled reconstruction, never the photo itself and never a before/after layout. Two hard locks gate acceptance: every important person, animal, and pose-critical prop stays fully in frame, and the source's spatial structure stays intact. Nine print and illustration recipes are available.
 
 Everything else — every other subject, style, or brief — runs through the expert directly.
+
+### Runtime loading
+
+The manuals are **layered**, so a cold run does not pull ~80 KB into context. Each sub-skill's `SKILL.md` states its own protocol:
+
+- **Always loaded:** that sub-skill's `SKILL.md` + `CORE.md` — goal, hard locks, workflow, self-check.
+- **On demand — `ATLAS.md`:** only after a failure or a user complaint, to match an F-code.
+- **On demand — `STUDY.md` / `APPENDIX.md`:** only when CORE locks are not enough to write actual measurements.
+- **One at a time — `recipes/*.md`:** never preload all nine cards.
+
+The parent skill routes to a sub-skill by loading its `SKILL.md` + `CORE.md` only, never the whole manual.
 
 ---
 
@@ -72,13 +93,15 @@ When no vibe is given, photo content decides: architecture or street vista → T
 
 Both sub-skills treat these demos as their **regression suite** — reopen them whenever quality slips. See [Generation prompts](#generation-prompts) for input-to-output examples.
 
+**Regression roles:** only `gold` (and `source` as the lock origin) are positive acceptance exemplars. `working-attempt` and `fail-example` exist for **gap analysis** — never copy them as ship targets. The per-file authority is [`demo/MANIFEST.md`](demo/MANIFEST.md).
+
 ### Couple avatars — `demo/avatar_demo/`
 
 > **One image in, one image out.** This is not a two-image batch. The portrait you hand over is never redrawn or altered — the skill draws a single new partner avatar to sit opposite it. The usual case is that you only hold one half of the pair: your own portrait, or a photo of a crush, where the other half has to be drawn to match.
 
 `L`/`R` are **set IDs, not "left/right of frame"** — facing direction is read from pixels.
 
-| Set | Source (`nL`) | Approved pair (`nR`) | Generated partner (`nL_gen`) |
+| Set | Source (`nL`) — **`source`** | Approved pair (`nR`) — **`gold`** | Generated partner (`nL_gen`) — **`working-attempt`** |
 |:---:|:---:|:---:|:---:|
 | 1 | <img src="demo/avatar_demo/1L.jpeg" width="200"> | <img src="demo/avatar_demo/1R.jpeg" width="200"> | <img src="demo/avatar_demo/1L_gen.jpeg" width="200"> |
 | 2 | <img src="demo/avatar_demo/2L.jpeg" width="200"> | <img src="demo/avatar_demo/2R.jpeg" width="200"> | <img src="demo/avatar_demo/2L_gen.jpeg" width="200"> |
@@ -92,6 +115,8 @@ Study method: open `nL` and lock facing, scale, stroke, face recipe, background,
 ### Style-transfer batch A — `demo/poster_demo1/`
 
 Coastal / street-memory batch. Practice axis, depth, and full pedestrians.
+
+> **Aspect note:** `style-01`…`style-09` here are **1280×720 (generator-native, 16:9)**. The source `raw.jpg` aspect differs — batch A is ≈4:3 (1706×1279), batch B is ≈1.51 (1024×677). Use these for **recipe dialect**; when shipping, enforce the source aspect via the skill's pad SOP (`CORE.md §6c`). The `*_matched.jpg` companions are the same images letterboxed to the raw aspect — use those for spatial comparison.
 
 **Source** — `demo/poster_demo1/raw.jpg`
 
@@ -109,11 +134,13 @@ Coastal / street-memory batch. Practice axis, depth, and full pedestrians.
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo1/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch.jpg" width="240"> |
 
-Regression: open `raw.jpg` vs `style-05` / `style-09` first (highest spatial bar), then the whitespace-heavy recipes for crop risk.
+Regression: open `raw.jpg` vs `style-05` / `style-09` first (highest spatial bar), then the whitespace-heavy recipes for crop risk. **⑧ Naïve Doodle** here is kept as a `working-attempt` (F6 — pedestrian groups simplified), not a spatial pass.
 
 ### Style-transfer batch B — `demo/poster_demo2/`
 
 Valley scene with a **female subject centered, back to camera**, looking toward the valley — a strong test of full figure, depth to valley, and same-place identity.
+
+> **Aspect note:** `style-01`…`style-09` here are **1280×720 (generator-native, 16:9)**. The source `raw.jpg` aspect differs — batch A is ≈4:3 (1706×1279), batch B is ≈1.51 (1024×677). Use these for **recipe dialect**; when shipping, enforce the source aspect via the skill's pad SOP (`CORE.md §6c`). The `*_matched.jpg` companions are the same images letterboxed to the raw aspect — use those for spatial comparison.
 
 **Source** — `demo/poster_demo2/raw.jpg`
 
@@ -131,7 +158,7 @@ Valley scene with a **female subject centered, back to camera**, looking toward 
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo2/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch.jpg" width="240"> |
 
-Regression: confirm the full back-view silhouette (head to hem as in the source) and unchanged valley depth across all nine styles.
+Regression: confirm the full back-view silhouette (head to hem as in the source) and unchanged valley depth across all nine styles. **⑧ Naïve Doodle** here is kept as a `fail-example` (F2 — the autumn/winter split rewrites the place identity). It must never be used as a spatial pass.
 
 **Failure atlas F1–F7:** incomplete people after whitespace · element-library spatial rewrite · source photo or comparison layout in frame · forced wrong aspect · type or crop marks cutting anatomy · clutter deletion removing a person · proxy-metric theater.
 

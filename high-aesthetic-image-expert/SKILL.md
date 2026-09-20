@@ -88,5 +88,7 @@ Keep positive locks as the default voice. These bans stay explicit:
 
 ## Related sub-skills
 
+**Route, then load narrowly.** When a brief belongs to a sub-skill, load that sub-skill's `SKILL.md` + `CORE.md` only. Do **not** paste a whole sub-skill manual into context. Open its `ATLAS.md`, `STUDY.md`, or a single `recipes/*.md` card only when that sub-skill's own loading protocol says to — normally after a failure or a user complaint.
+
 - **Separate matching partner avatar** (couple set / matching PFPs): run **[Matching Couple Avatar](sand-workflow:matching-couple-avatar)** — leave the source portrait unchanged; lock the partner from the source's drawing grammar with **couplet-logic complementarity** (opposites that pair, not a mirror clone).
-- **Style transfer from one photo**: run **[Photo Style Transfer Poster](sand-workflow:photo-style-transfer-poster)** — styled reconstruction only; match source resolution/aspect (4:3 only when source is near 4:3); keep every important subject fully in frame; preserve spatial structure (road axis, lamp/primary light, pedestrian groups, depth — same moment/space); recommend and lock a recipe from photo/vibe (recipe numbers stay internal). Nine full recipes live in that skill.
+- **Style transfer from one photo**: run **[Photo Style Transfer Poster](sand-workflow:photo-style-transfer-poster)** — styled reconstruction only; match source resolution/aspect (4:3 only when source is near 4:3); keep every important subject fully in frame; preserve spatial structure (road axis, lamp/primary light, pedestrian groups, depth — same moment/space); recommend and lock a recipe from photo/vibe (recipe numbers stay internal). Nine recipe cards live under that skill's `recipes/` — load one at a time.

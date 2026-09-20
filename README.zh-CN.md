@@ -9,12 +9,22 @@
 ```
 aesthetic-atelier/
 ├── high-aesthetic-image-expert/SKILL.md      ← 技能本体
-├── matching-couple-avatar/SKILL.md           ← 子技能 1
-├── photo-style-transfer-poster/SKILL.md      ← 子技能 2
+├── matching-couple-avatar/                   ← 子技能 1
+│   ├── SKILL.md          薄入口 + 加载协议
+│   ├── CORE.md           默认加载 —— 法则
+│   ├── STUDY.md          按需 —— 实测协议
+│   ├── ATLAS.md          按需 —— 失败图鉴 F1–F8
+│   └── APPENDIX.md       按需 —— 模板与操作笔记
+├── photo-style-transfer-poster/              ← 子技能 2
+│   ├── SKILL.md          薄入口 + 加载协议
+│   ├── CORE.md           默认加载 —— 法则
+│   ├── ATLAS.md          按需 —— 失败图鉴 F1–F7
+│   └── recipes/          九张配方卡，一次只开一张
 └── demo/                                     ← 回归示例图集
+    ├── MANIFEST.md         每张图的角色 —— 权威来源
     ├── avatar_demo/        情侣头像组（1L–4L）
-    ├── poster_demo1/       风格迁移批次 A（原图 + 9 种风格）
-    ├── poster_demo2/       风格迁移批次 B（原图 + 9 种风格）
+    ├── poster_demo1/       风格迁移批次 A（原图 + 9 种风格 + 9 张画幅对齐）
+    ├── poster_demo2/       风格迁移批次 B（原图 + 9 种风格 + 9 张画幅对齐）
     └── bear.jpg            通用任务示例
 ```
 
@@ -32,6 +42,17 @@ aesthetic-atelier/
 - **Photo Style Transfer Poster（风格迁移海报）** 把一张照片变成同一时刻、同一空间的一张完成稿 —— 是风格化重建，绝不是照片本身，也绝不是前后对比排版。两道硬锁把关：所有重要人物、动物和姿态关键道具必须完整留在画面内；原图的空间结构必须保持不变。内置九种版画 / 插画配方。
 
 除此之外的一切 —— 其他任何题材、风格或需求 —— 都由技能本体直接处理。
+
+### 运行时加载
+
+手册是**分层**的，所以冷启动不会把 80KB 全灌进上下文。每个子技能的 `SKILL.md` 都写了自己的协议：
+
+- **始终加载：** 该子技能的 `SKILL.md` + `CORE.md` —— 目标、硬锁、流程、自检。
+- **按需 —— `ATLAS.md`：** 只在翻车或用户抱怨之后打开，用来对照 F 码。
+- **按需 —— `STUDY.md` / `APPENDIX.md`：** 只在 CORE 的锁定不足以写出实测数值时打开。
+- **一次一张 —— `recipes/*.md`：** 绝不预加载九张卡。
+
+父技能路由到子技能时，只加载它的 `SKILL.md` + `CORE.md`，不加载整本手册。
 
 ---
 
@@ -72,13 +93,15 @@ aesthetic-atelier/
 
 两个子技能都把这些示例当作**回归测试集** —— 质量下滑时就重新打开对照。输入到输出的完整示例见 [生成提示词](#生成提示词)。
 
+**回归角色：** 只有 `gold`（以及作为锁定起点的 `source`）才是正例。`working-attempt` 和 `fail-example` 只用于**找差距** —— 绝不能当成交付样板照抄。每张图的权威定义见 [`demo/MANIFEST.md`](demo/MANIFEST.md)。
+
 ### 情侣头像 — `demo/avatar_demo/`
 
 > **一张进，一张出。** 这不是一次出两张图。你交出来的头像永远不会被重绘或修改 —— 技能只画一张新头像，摆在它的对面。常见情况是你手上只有一半：自己的头像，或者喜欢的人（暗恋对象）的照片，另一半需要画出来配对。
 
 `L`/`R` 是**组号，不是"画面左/右"** —— 朝向以像素为准。
 
-| 组 | 原图（`nL`） | 已认可的配对（`nR`） | 生成的配对头像（`nL_gen`） |
+| 组 | 原图（`nL`）— **`source`** | 已认可的配对（`nR`）— **`gold`** | 生成的配对头像（`nL_gen`）— **`working-attempt`** |
 |:---:|:---:|:---:|:---:|
 | 1 | <img src="demo/avatar_demo/1L.jpeg" width="200"> | <img src="demo/avatar_demo/1R.jpeg" width="200"> | <img src="demo/avatar_demo/1L_gen.jpeg" width="200"> |
 | 2 | <img src="demo/avatar_demo/2L.jpeg" width="200"> | <img src="demo/avatar_demo/2R.jpeg" width="200"> | <img src="demo/avatar_demo/2L_gen.jpeg" width="200"> |
@@ -92,6 +115,8 @@ aesthetic-atelier/
 ### 风格迁移批次 A — `demo/poster_demo1/`
 
 海岸 / 街道记忆批次。用于练习轴线、景深与完整行人。
+
+> **画幅说明：** 本节的 `style-01`…`style-09` 是 **1280×720（生成器原生，16:9）**，与各自 `raw.jpg` 的画幅不一致 —— 批次 A 的原图≈4:3（1706×1279），批次 B≈1.51（1024×677）。这些图用于**配方方言**对照；对外交付时须按技能的 pad 规程对齐源图画幅（`CORE.md §6c`）。`*_matched.jpg` 是同一张图 letterbox 到原图画幅的版本，做空间对照请用它们。
 
 **原图** — `demo/poster_demo1/raw.jpg`
 
@@ -109,11 +134,13 @@ aesthetic-atelier/
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo1/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch.jpg" width="240"> |
 
-回归：先对照 `raw.jpg` 与 `style-05` / `style-09`（空间要求最高），再看大留白配方的裁切风险。
+回归：先对照 `raw.jpg` 与 `style-05` / `style-09`（空间要求最高），再看大留白配方的裁切风险。**⑧ Naïve Doodle** 在这里是 `working-attempt`（F6 —— 行人被简化），不算空间合格。
 
 ### 风格迁移批次 B — `demo/poster_demo2/`
 
 山谷场景，**女性主体居中、背对镜头**，望向山谷 —— 是"完整人形 + 山谷景深 + 同一地点辨识度"的强测试。
+
+> **画幅说明：** 本节的 `style-01`…`style-09` 是 **1280×720（生成器原生，16:9）**，与各自 `raw.jpg` 的画幅不一致 —— 批次 A 的原图≈4:3（1706×1279），批次 B≈1.51（1024×677）。这些图用于**配方方言**对照；对外交付时须按技能的 pad 规程对齐源图画幅（`CORE.md §6c`）。`*_matched.jpg` 是同一张图 letterbox 到原图画幅的版本，做空间对照请用它们。
 
 **原图** — `demo/poster_demo2/raw.jpg`
 
@@ -131,7 +158,7 @@ aesthetic-atelier/
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo2/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch.jpg" width="240"> |
 
-回归：确认背身剪影完整（与原图一样从头顶到衣摆），且九种风格的谷底景深保持不变。
+回归：确认背身剪影完整（与原图一样从头顶到衣摆），且九种风格的谷底景深保持不变。**⑧ Naïve Doodle** 在这里是 `fail-example`（F2 —— 秋冬分屏改写了地点身份），绝不能当作空间正例。
 
 **失败图鉴 F1–F7：** 留白后人物不完整 · 元素库式空间重写 · 成片里出现原照片或对比排版 · 强行套错画幅 · 字体或裁切线切到人体 · 清理杂物时删掉了人 · 只调代理指标。
 
