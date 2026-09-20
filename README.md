@@ -12,18 +12,22 @@ high-aesthetic-skills-pack/
 └── demo/                                     ← regression image sets
     ├── avatar_demo/        couple-PFP set (1L–4L)
     ├── poster_demo1/       style-transfer batch A (raw + 9 styles)
-    └── poster_demo2/       style-transfer batch B (raw + 9 styles)
+    ├── poster_demo2/       style-transfer batch B (raw + 9 styles)
+    └── bear.jpg            general-brief example
 ```
 
 ---
 
 ## The skills
 
-**High Aesthetic Image Expert** is the entry point for any image brief. It applies a fixed aesthetic core — restraint, relationship-first composition, color from content, sparse decoration, negative space as design, deconstruct-then-reconstruct, clean delivery — and runs a mandatory self-review before anything ships. Specialty briefs route to the two sub-skills.
+**High Aesthetic Image Expert** is an aesthetic image expert, and the entry point for **any** image brief — a realistic photo, an illustration, a mood piece, a poster, a wallpaper, a concept, or a scene that exists only in words. It applies a fixed aesthetic core — restraint, relationship-first composition, color from content, sparse decoration, negative space as design, deconstruct-then-reconstruct, clean delivery — and runs a mandatory self-review before anything ships.
 
-**Matching Couple Avatar** takes the user's portrait and draws **one** new partner portrait to pair with it (couple set / matching profile pictures). It is not a two-image batch — the portrait you supply is never redrawn or altered, only the missing half is drawn. Generation is driven by pixel-level locks measured from the source — stroke material, face recipe, palette, background — so the partner reads as the same illustrator's hand with a new identity, and forms couplet-logic complementarity rather than a mirror clone.
+The two sub-skills are **specialised training for two recurring task types** — not the limit of what the skill does:
 
-**Photo Style Transfer Poster** turns one photo into one finished styled image of the same moment and space — a styled reconstruction, never the photo itself and never a before/after layout. Two hard locks gate acceptance: every important person, animal, and pose-critical prop stays fully in frame, and the source's spatial structure stays intact. Nine print and illustration recipes are available.
+- **Matching Couple Avatar** takes the user's portrait and draws **one** new partner portrait to pair with it (couple set / matching profile pictures). It is not a two-image batch — the portrait you supply is never redrawn or altered, only the missing half is drawn. Generation is driven by pixel-level locks measured from the source — stroke material, face recipe, palette, background — so the partner reads as the same illustrator's hand with a new identity, and forms couplet-logic complementarity rather than a mirror clone.
+- **Photo Style Transfer Poster** turns one photo into one finished styled image of the same moment and space — a styled reconstruction, never the photo itself and never a before/after layout. Two hard locks gate acceptance: every important person, animal, and pose-critical prop stays fully in frame, and the source's spatial structure stays intact. Nine print and illustration recipes are available.
+
+Everything else — every other subject, style, or brief — runs through the expert directly.
 
 ---
 
@@ -133,7 +137,27 @@ Recipes ⑤ travel-sketch, ⑦ jp-line, and ⑨ ink are the strictest on **space
 
 ## Generation prompts
 
-What the interaction actually looks like: the image you hand over, the brief you type, and what comes back.
+What the interaction actually looks like: the image — or the words — you bring, the brief you type, and what comes back.
+
+### General brief — a scene from a novel
+
+No reference image and no style name: just a passage (paraphrased) and a mood.
+
+**Prompt**
+
+> Here's a passage from a novel. I want a beautiful, romantic, literary, high-resolution image of the scene it describes:
+>
+> "I like you more than anything, Midori."
+> "How much?"
+> "As much as a bear in spring."
+> "A bear in spring?" Midori looks up again. "What kind of bear is that?"
+> "You're walking alone through a spring meadow, and a small lovely bear comes toward you — fur like velvet, round button eyes. It says, 'Hello, miss, would you like to roll around with me?' So you hug the bear, and the two of you go tumbling down a hillside of clover and play there the whole day long. Isn't that wonderful?"
+> "That's wonderful."
+> "That's how much I like you."
+
+**Output** — `demo/bear.jpg`
+
+<img src="demo/bear.jpg" width="520">
 
 ### Matching couple avatar
 
