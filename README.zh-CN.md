@@ -7,7 +7,7 @@
 本包的表达基调是**正向锁定**：明确说出要保留和交付什么。只有当某种失败模式反复出现时，才使用强调式禁令。
 
 ```
-high-aesthetic-skills-pack/
+aesthetic-atelier/
 ├── high-aesthetic-image-expert/SKILL.md      ← 技能本体
 ├── matching-couple-avatar/SKILL.md           ← 子技能 1
 ├── photo-style-transfer-poster/SKILL.md      ← 子技能 2
@@ -17,6 +17,8 @@ high-aesthetic-skills-pack/
     ├── poster_demo2/       风格迁移批次 B（原图 + 9 种风格）
     └── bear.jpg            通用任务示例
 ```
+
+**快速跳转：** [技能构成](#技能构成) · [九种配方](#九种配方) · [示例图库](#示例图库) · [生成提示词](#生成提示词) · [安装](#安装) · [共同信条](#共同信条) · [许可证](#许可证)
 
 ---
 
@@ -139,11 +141,9 @@ high-aesthetic-skills-pack/
 
 ## 生成提示词
 
-真实交互长什么样：你带来的图 —— 或者文字 —— 你敲进去的那句话，以及返回的结果。
+真实交互长什么样。下面三个示例都用同一套结构：**Prompt**，然后**输入**，然后**输出**。
 
 ### 通用需求 —— 根据小说场景作画
-
-没有参考图，也没有风格名：只有一段文字和一种情绪。
 
 **Prompt**
 
@@ -157,27 +157,33 @@ high-aesthetic-skills-pack/
 > "太棒了。"
 > "我就这么喜欢你。"
 
-**Output** — `demo/bear.jpg`
+**输入** — 上面那段文字（有删节）；没有参考图
+
+**输出** — `demo/bear.jpg`
 
 <img src="demo/bear.jpg" width="520">
 
 ### 情侣头像
 
-| 输入 — `demo/avatar_demo/3L.jpg` | 输出 — `demo/avatar_demo/3L_gen.jpg` |
-|:---:|:---:|
-| <img src="demo/avatar_demo/3L.jpg" width="240"> | <img src="demo/avatar_demo/3L_gen.jpg" width="240"> |
+**Prompt**
 
 > 给你一张头像，我想要生成对应的情侣头像。
+
+| **输入** — `demo/avatar_demo/3L.jpg` | **输出** — `demo/avatar_demo/3L_gen.jpg` |
+|:---:|:---:|
+| <img src="demo/avatar_demo/3L.jpg" width="240"> | <img src="demo/avatar_demo/3L_gen.jpg" width="240"> |
 
 原文件保持不变。输出的是一张新头像，同一支笔、朝向相反，两张摆在一起读得出是一对。
 
 ### 风格迁移 —— 印花标本（Pressed Flower）
 
-| 输入 — `demo/poster_demo2/raw.jpg` | 输出 — `demo/poster_demo2/style-04-pressed-flower.jpg` |
-|:---:|:---:|
-| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> |
+**Prompt**
 
 > 给你一张照片，我想要生成一张印花风格的文艺海报。
+
+| **输入** — `demo/poster_demo2/raw.jpg` | **输出** — `demo/poster_demo2/style-04-pressed-flower.jpg` |
+|:---:|:---:|
+| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> |
 
 同一张照片、同一时刻、同一空间：主体保持完整、布局原地不动，只有媒介变了。把风格名换成上表九种配方中的任意一个即可。
 
@@ -192,8 +198,8 @@ high-aesthetic-skills-pack/
 ### 1. 克隆本包
 
 ```bash
-git clone <this-repo-url> ~/high-aesthetic-skills-pack
-cd ~/high-aesthetic-skills-pack
+git clone <this-repo-url> ~/aesthetic-atelier
+cd ~/aesthetic-atelier
 ```
 
 ### 2. 把技能链进你的工具
@@ -214,9 +220,9 @@ Claude Code 要求 `<skill-name>/SKILL.md` 直接位于 skills 根目录下，�
 **Cursor** —— Cursor 会递归扫描 skills 根目录，并以包含 `SKILL.md` 的目录名作为技能名，所以整包一个软链就够：
 
 ```bash
-ln -sfn ~/high-aesthetic-skills-pack ~/.cursor/skills/high-aesthetic-skills-pack
+ln -sfn ~/aesthetic-atelier ~/.cursor/skills/aesthetic-atelier
 # 或项目级：
-# ln -sfn ~/high-aesthetic-skills-pack .cursor/skills/high-aesthetic-skills-pack
+# ln -sfn ~/aesthetic-atelier .cursor/skills/aesthetic-atelier
 ```
 
 Cursor 会读取 `.cursor/skills/`、`.agents/skills/` 及其 `~/` 全局对应目录，同时也兼容读取 `.claude/skills/` 和 `.codex/skills/`。你也可以用内置的 `/create-skill` 创建自己的技能。
@@ -244,11 +250,11 @@ Codex 会读取 `$CWD/.agents/skills`、`$REPO_ROOT/.agents/skills`、`$HOME/.ag
 
 ### 3. 让示例图集可用（可选）
 
-两个子技能都把示例标注为"有则可读"。它们以包内相对路径引用，例如 `high-aesthetic-skills-pack/demo/avatar_demo/`。由于示例目录与技能目录平级而非嵌套，建议告诉你的 agent 本包在哪 —— 比如在 `AGENTS.md` / `CLAUDE.md` 里加一行：
+两个子技能都把示例标注为"有则可读"。它们以包内相对路径引用，例如 `aesthetic-atelier/demo/avatar_demo/`。由于示例目录与技能目录平级而非嵌套，建议告诉你的 agent 本包在哪 —— 比如在 `AGENTS.md` / `CLAUDE.md` 里加一行：
 
 ```markdown
-High aesthetic image skills pack is cloned at ~/high-aesthetic-skills-pack.
-Demo regression sets: ~/high-aesthetic-skills-pack/demo/{avatar_demo,poster_demo1,poster_demo2}
+High aesthetic image skills pack is cloned at ~/aesthetic-atelier.
+Demo regression sets: ~/aesthetic-atelier/demo/{avatar_demo,poster_demo1,poster_demo2}
 ```
 
 会递归扫描的工具（Cursor）也可以直接用上面那条整包软链，这样文档里写的路径就原样有效。

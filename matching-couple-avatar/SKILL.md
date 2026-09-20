@@ -12,7 +12,7 @@ description: >-
 # Matching Couple Avatar
 
 > **Pack demos (required reading when available):**  
-> `high-aesthetic-skills-pack/demo/avatar_demo/`  
+> `aesthetic-atelier/demo/avatar_demo/`  
 > Files: `1L`/`1R`/`1L_gen`, `2L`/`2R`/`2L_gen`, `3L`/`3R`/`3L_gen`, `4L`/`4R`/`4L_gen`  
 > (`L`/`R` are **set IDs**, not “left/right of frame”. Facing direction is read from pixels.)
 
@@ -349,7 +349,7 @@ Open the files. Confirm each box from pixels.
 
 ## 8. Demo atlas — `avatar_demo/` (how to learn, refine, pass)
 
-Path (user pack): `high-aesthetic-skills-pack/demo/avatar_demo/`  
+Path (user pack): `aesthetic-atelier/demo/avatar_demo/`  
 Also sync copies under agent workflows / box packs when present.
 
 | ID | Source | Exemplar pair | Partner output |
@@ -861,9 +861,7 @@ Minimum crops beside the sheet:
 
 ## 27. Appendix F — pack path reference
 
-Primary user pack:
-
-`/home/zijianwang/Pictures/high-aesthetic-skills-pack/`
+Pack root = this skill's parent directory (`..`). Every path below is relative to it; nothing here is machine-specific.
 
 Relevant entries:
 
@@ -875,7 +873,7 @@ Relevant entries:
 Agent workflow mirrors:
 
 - `matching-couple-avatar-2` / `matching-couple-avatar`
-- `high-aesthetic-skills-pack/matching-couple-avatar`
+- `aesthetic-atelier/matching-couple-avatar`
 
 Keep these synchronized when the skill updates.
 

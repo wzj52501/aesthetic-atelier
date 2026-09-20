@@ -7,7 +7,7 @@
 The pack's voice is **positive locks**: state what to keep and deliver. Emphatic bans appear only where a failure mode recurs in practice.
 
 ```
-high-aesthetic-skills-pack/
+aesthetic-atelier/
 ├── high-aesthetic-image-expert/SKILL.md      ← the skill
 ├── matching-couple-avatar/SKILL.md           ← sub-skill 1
 ├── photo-style-transfer-poster/SKILL.md      ← sub-skill 2
@@ -17,6 +17,8 @@ high-aesthetic-skills-pack/
     ├── poster_demo2/       style-transfer batch B (raw + 9 styles)
     └── bear.jpg            general-brief example
 ```
+
+**Jump to:** [The skills](#the-skills) · [The nine recipes](#the-nine-recipes) · [Demo gallery](#demo-gallery) · [Generation prompts](#generation-prompts) · [Installation](#installation) · [Shared doctrine](#shared-doctrine) · [License](#license)
 
 ---
 
@@ -139,11 +141,9 @@ Recipes ⑤ travel-sketch, ⑦ jp-line, and ⑨ ink are the strictest on **space
 
 ## Generation prompts
 
-What the interaction actually looks like: the image — or the words — you bring, the brief you type, and what comes back.
+What the interaction actually looks like. Every example below uses the same three blocks: **Prompt**, then **Input**, then **Output**.
 
 ### General brief — a scene from a novel
-
-No reference image and no style name: just a passage (paraphrased) and a mood.
 
 **Prompt**
 
@@ -157,27 +157,33 @@ No reference image and no style name: just a passage (paraphrased) and a mood.
 > "That's wonderful."
 > "That's how much I like you."
 
+**Input** — the passage above (paraphrased); no reference image
+
 **Output** — `demo/bear.jpg`
 
 <img src="demo/bear.jpg" width="520">
 
 ### Matching couple avatar
 
-| Input — `demo/avatar_demo/3L.jpg` | Output — `demo/avatar_demo/3L_gen.jpg` |
-|:---:|:---:|
-| <img src="demo/avatar_demo/3L.jpg" width="240"> | <img src="demo/avatar_demo/3L_gen.jpg" width="240"> |
+**Prompt**
 
 > Here's an avatar. I want a matching couple avatar for it.
+
+| **Input** — `demo/avatar_demo/3L.jpg` | **Output** — `demo/avatar_demo/3L_gen.jpg` |
+|:---:|:---:|
+| <img src="demo/avatar_demo/3L.jpg" width="240"> | <img src="demo/avatar_demo/3L_gen.jpg" width="240"> |
 
 The source file is left untouched. The output is a single new portrait, drawn in the same hand and facing the opposite way so the two read as a pair.
 
 ### Style transfer — Pressed Flower
 
-| Input — `demo/poster_demo2/raw.jpg` | Output — `demo/poster_demo2/style-04-pressed-flower.jpg` |
-|:---:|:---:|
-| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> |
+**Prompt**
 
 > Here's a photo. I want a pressed-flower style literary poster from it.
+
+| **Input** — `demo/poster_demo2/raw.jpg` | **Output** — `demo/poster_demo2/style-04-pressed-flower.jpg` |
+|:---:|:---:|
+| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> |
 
 Same photo, same moment and space: the subjects stay complete and the layout stays put — only the medium changes. Swap the style name for any of the nine recipes in the table above.
 
@@ -192,8 +198,8 @@ Each skill folder is self-contained: the folder name is the skill slug and `SKIL
 ### 1. Clone the pack
 
 ```bash
-git clone <this-repo-url> ~/high-aesthetic-skills-pack
-cd ~/high-aesthetic-skills-pack
+git clone <this-repo-url> ~/aesthetic-atelier
+cd ~/aesthetic-atelier
 ```
 
 ### 2. Link the skills into your tool
@@ -214,9 +220,9 @@ Claude Code expects `<skill-name>/SKILL.md` directly under the skills root, then
 **Cursor** — Cursor walks the skills root recursively and takes the skill name from the folder containing `SKILL.md`, so one symlink of the whole pack is enough:
 
 ```bash
-ln -sfn ~/high-aesthetic-skills-pack ~/.cursor/skills/high-aesthetic-skills-pack
+ln -sfn ~/aesthetic-atelier ~/.cursor/skills/aesthetic-atelier
 # or project-scoped:
-# ln -sfn ~/high-aesthetic-skills-pack .cursor/skills/high-aesthetic-skills-pack
+# ln -sfn ~/aesthetic-atelier .cursor/skills/aesthetic-atelier
 ```
 
 Cursor reads `.cursor/skills/`, `.agents/skills/`, and their `~/` global equivalents, and also loads skills from `.claude/skills/` and `.codex/skills/` for compatibility. You can also use the built-in `/create-skill` to scaffold your own.
@@ -244,11 +250,11 @@ Codex reads `$CWD/.agents/skills`, `$REPO_ROOT/.agents/skills`, `$HOME/.agents/s
 
 ### 3. Make the demos available (optional)
 
-The sub-skills mark the demos as *required reading when available*. They are referenced by pack-relative paths such as `high-aesthetic-skills-pack/demo/avatar_demo/`. Because the demo folders sit next to the skills rather than inside them, tell your agent where the pack lives — for example by adding one line to `AGENTS.md` / `CLAUDE.md`:
+The sub-skills mark the demos as *required reading when available*. They are referenced by pack-relative paths such as `aesthetic-atelier/demo/avatar_demo/`. Because the demo folders sit next to the skills rather than inside them, tell your agent where the pack lives — for example by adding one line to `AGENTS.md` / `CLAUDE.md`:
 
 ```markdown
-High aesthetic image skills pack is cloned at ~/high-aesthetic-skills-pack.
-Demo regression sets: ~/high-aesthetic-skills-pack/demo/{avatar_demo,poster_demo1,poster_demo2}
+High aesthetic image skills pack is cloned at ~/aesthetic-atelier.
+Demo regression sets: ~/aesthetic-atelier/demo/{avatar_demo,poster_demo1,poster_demo2}
 ```
 
 Tools that scan recursively (Cursor) can instead take the single whole-pack symlink shown above, which keeps the documented paths valid as-is.
