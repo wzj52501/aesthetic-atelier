@@ -1,4 +1,4 @@
-# High Aesthetic Image Skills Pack
+# Aesthetic Atelier
 
 **English** | [简体中文](README.zh-CN.md)
 
