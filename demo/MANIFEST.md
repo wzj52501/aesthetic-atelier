@@ -14,6 +14,7 @@ from how pretty it looks. If a `*_gen` file later passes the hard locks, promote
 | `working-attempt` | A real generation attempt (mostly `*_gen`) | Gap analysis only — find the delta, then tighten locks. **Never** a ship target |
 | `fail-example` | A deliberately kept failure | Only when `ATLAS.md` is open, to match an F-code. **Never** a positive exemplar |
 | `mood-ref` | Mood / aesthetic reference; the brief may be only loosely met | General-brief demos. Not scored against couplet or poster hard locks |
+| `promo` | A promotional asset, not a regression sample | Illustrates the pack in the README. Never used for acceptance or gap analysis |
 
 One primary role per file. `fail_tags` reference the F-codes in the relevant `ATLAS.md`.
 
@@ -79,4 +80,7 @@ poster_demo2:
   style-09-ink-sketch_matched.jpg:  { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
 
 bear.jpg: { role: mood-ref, notes: "romantic meadow reads well; the small tumbling bear from the brief is not really met — not a hard-lock gold" }
+
+# Promotional asset — not regression material
+repo-hero-poster.jpg: { role: promo, notes: "README hero banner (2400x1324). Never used for acceptance or gap analysis" }
 ```

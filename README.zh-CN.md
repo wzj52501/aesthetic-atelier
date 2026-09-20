@@ -1,5 +1,10 @@
 # 美学工作室
 
+![Aesthetic Atelier](demo/repo-hero-poster.jpg)
+
+> High Aesthetic Image Expert · 1 个技能 + 2 个子技能  
+> Matching Couple Avatar · Photo Style Transfer Poster · 克制、关系优先、留白
+
 [English](README.md) | **简体中文**
 
 **一个技能 —— High Aesthetic Image Expert —— 带两个子技能**，专注高审美图像创作。以 `SKILL.md` 操作手册的形式交付，并附带作为回归记忆的示例图集。

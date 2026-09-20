@@ -1,5 +1,10 @@
 # Aesthetic Atelier
 
+![Aesthetic Atelier](demo/repo-hero-poster.jpg)
+
+> High Aesthetic Image Expert · 1 skill + 2 sub-skills  
+> Matching Couple Avatar · Photo Style Transfer Poster · restraint, relation-first, whitespace
+
 **English** | [简体中文](README.zh-CN.md)
 
 **One skill — High Aesthetic Image Expert — with two sub-skills**, for high-aesthetic image work. Shipped as `SKILL.md` operator manuals plus the demo image sets that serve as their regression memory.
