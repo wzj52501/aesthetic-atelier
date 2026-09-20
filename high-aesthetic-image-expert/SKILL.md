@@ -83,10 +83,10 @@ If any item fails, regenerate or fix, then re-check.
 
 Keep positive locks as the default voice. These bans stay explicit:
 
-- **Couple / 情侣头像:** **禁止仅使用粗 label / 粗粒度 tag 就开始生成** — measure and crop from the source first; see Matching Couple Avatar §1.1a.
-- **风格迁移:** **禁止**裁切重要人像/动物；**禁止**把原图当元素库改空间；**禁止**成片放入原照片或 50/50 对照 — see Photo Style Transfer Poster hard locks.
+- **Couple / matching PFPs:** **never start generating from coarse labels or coarse-grained tags alone** — measure and crop from the source first; see Matching Couple Avatar §1.1a.
+- **Style transfer:** **never** crop important people or animals; **never** treat the source photo as an element library and rewrite its space; **never** place the source photo in the delivered frame or build a 50/50 comparison — see Photo Style Transfer Poster hard locks.
 
 ## Related sub-skills
 
-- **Separate matching partner avatar** (couple set / matching PFPs / 情侣头像): run **[Matching Couple Avatar](sand-workflow:matching-couple-avatar)** — leave the source portrait unchanged; lock partner from source grammar with **对子** complementarity.
-- **Style-transfer from one photo** (风格迁移): run **[Photo Style Transfer Poster](sand-workflow:photo-style-transfer-poster)** — styled reconstruction only; match source resolution/aspect (4:3 only when source is near 4:3); keep every important subject fully in frame; preserve spatial structure (road axis, lamp/primary light, pedestrian groups, depth — same moment/space); recommend and lock a recipe from photo/vibe (recipe numbers stay internal). Nine full recipes live in that skill.
+- **Separate matching partner avatar** (couple set / matching PFPs): run **[Matching Couple Avatar](sand-workflow:matching-couple-avatar)** — leave the source portrait unchanged; lock the partner from the source's drawing grammar with **couplet-logic complementarity** (opposites that pair, not a mirror clone).
+- **Style transfer from one photo**: run **[Photo Style Transfer Poster](sand-workflow:photo-style-transfer-poster)** — styled reconstruction only; match source resolution/aspect (4:3 only when source is near 4:3); keep every important subject fully in frame; preserve spatial structure (road axis, lamp/primary light, pedestrian groups, depth — same moment/space); recommend and lock a recipe from photo/vibe (recipe numbers stay internal). Nine full recipes live in that skill.

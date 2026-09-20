@@ -6,99 +6,26 @@ The pack's voice is **positive locks**: state what to keep and deliver. Emphatic
 
 ```
 high-aesthetic-skills-pack/
-├── high-aesthetic-image-expert/SKILL.md      ← the skill
-├── matching-couple-avatar/SKILL.md           ← sub-skill 1
-├── photo-style-transfer-poster/SKILL.md      ← sub-skill 2
-└── demo/
-    ├── avatar_demo/        couple-PFP regression set (1L–4L)
+├── high-aesthetic-image-expert/SKILL.md      ← the skill (92 lines)
+├── matching-couple-avatar/SKILL.md           ← sub-skill 1 (996 lines)
+├── photo-style-transfer-poster/SKILL.md      ← sub-skill 2 (627 lines)
+└── demo/                                     ← regression image sets (32 images)
+    ├── avatar_demo/        couple-PFP set (1L–4L)
     ├── poster_demo1/       style-transfer batch A (raw + 9 styles)
     └── poster_demo2/       style-transfer batch B (raw + 9 styles)
 ```
 
-| Path | Role | Size |
-|---|---|---|
-| `high-aesthetic-image-expert/` | **The skill.** Any image brief. Fixed aesthetic core, every-turn workflow, mandatory self-review. Routes specialty briefs to the sub-skills. | 92 lines |
-| `matching-couple-avatar/` | **Sub-skill.** Leave the user's portrait unchanged; deliver one independent partner portrait (couple set / 情侣头像). | 996 lines |
-| `photo-style-transfer-poster/` | **Sub-skill.** One photo → one finished styled image of the same moment and space (风格迁移). Nine recipes. | 627 lines |
-| `demo/` | Regression memory for both sub-skills — see [Demo gallery](#demo-gallery). | 32 images |
-
-The two sub-skill manuals are intentionally long. Both say why: short "vibe" skills produce exactly the failures catalogued in their atlases — tag-led stock dialect, cropped people, rewritten streets, mirror-clone pairs.
-
 ---
 
-## The skill: High Aesthetic Image Expert
+## The skills
 
-One job: produce or arrange high-aesthetic, elegant, deliverable images from the user's brief (subject, mood, composition, reference, style).
+**High Aesthetic Image Expert** is the entry point for any image brief. It applies a fixed aesthetic core — restraint, relationship-first composition, color from content, sparse decoration, negative space as design, deconstruct-then-reconstruct, clean delivery — and runs a mandatory self-review before anything ships. Specialty briefs route to the two sub-skills.
 
-**Aesthetic core — fixed across all styles:**
+**Matching Couple Avatar** takes the user's portrait and delivers one new standalone partner portrait that pairs with it (couple set / 情侣头像). The source file is never modified. Generation is driven by pixel-level locks measured from the source — stroke material, face recipe, palette, background — so the partner reads as the same illustrator's hand with a new identity, and forms Chinese 对子 complementarity rather than a mirror clone.
 
-1. **Restraint** — quiet confidence over spectacle.
-2. **Relationship first** — spatial relations, hierarchy, and silhouette before ornaments.
-3. **Color from content** — palette follows subject and light.
-4. **Sparse decoration** — few marks; breathing room over sticker piles.
-5. **Negative space as design** — empty areas are intentional.
-6. **Deconstruct, then reconstruct** — list 3–6 visual facts before generating.
-7. **Clean delivery** — ship the finished image; the picture is the answer.
+**Photo Style Transfer Poster** turns one photo into one finished styled image of the same moment and space (风格迁移) — a styled reconstruction, never the photo itself and never a before/after layout. Two hard locks gate acceptance: every important person, animal, and pose-critical prop stays fully in frame, and the source's spatial structure stays intact. Nine print and illustration recipes are available.
 
-**Style recipes:** photoreal / editorial, anime / illustration, lyrical / mood, oil / material, and user-named styles — all under the same core. A titled poster layout is used only when asked for or when a sub-skill requires it.
-
-**Every-turn workflow:** Brief → Explore (3–6 internal visual facts) → Generate → **Self-review (mandatory)** → Deliver. If one critical constraint is missing, ask **one** question.
-
-**Self-review checklist** covers brief match, style fidelity, pair intent, color coherence, hands/face detail, **complete important subjects**, resolution/crop, frame contents, orientation (when pairing, face the *opposite* direction so the pair looks toward each other), and file attachment. Fail → regenerate, then re-check.
-
-**Resolution rules:** match the user's stated size; if the generator returns a fixed lower size (e.g. 1280×720), crop/resize with subject-aware framing and keep people/animals fully inside; be honest when a result is upscaled.
-
----
-
-## Sub-skill 1: Matching Couple Avatar
-
-**Goal:** produce **one new standalone partner portrait** that
-
-1. leaves the user's source portrait file unchanged — deliver only a new partner file,
-2. is visibly a *different* picture (fresh identity and props, shared drawing dialect),
-3. shares nearly the same **drawing dialect** as the source (line material, spatial habits, face recipe, brightness/cast, motif grammar),
-4. forms Chinese **对子** complementarity with the source — a complementary mate, not a mirror clone,
-5. keeps **person + background co-framed**.
-
-**Primary control is pixel-level source features** — line weight, contour breaks, blush hatch, palette RGB, grain, hair clump structure, iris/mouth recipe — driven from the source image and micro-crops. Genre or mood labels (`anime`, `xianxia`, `hanfu vibe`, `watercolor style`, `ethereal`, …) may appear **only after** concrete source-derived locks are written, and only as one subordinate clause.
-
-**对子 — couple symmetry as complementary opposites.** A shared layer (stroke material, face recipe family, palette grammar, motif language, spatial habits) pairs with a deliberately opposed layer:
-
-| Axis | Example 对子 |
-|---|---|
-| Value / robe | dark navy robe ↔ pale mist robe |
-| Facing | right profile ↔ left profile |
-| Active / passive | hand holding a stem ↔ quiet empty hand + floating motif |
-| Motif split | line-art heart on open field ↔ blossom cluster in hair / held sprig |
-| Weather / element metaphors | 白对黑、云对雨、雪对风、晚照对晴空 — design thinking, never text in the image |
-
-**Emphatic bans** (recurring failure modes):
-
-1. **禁止仅使用粗 label / 粗粒度 tag 就开始生成** — measure and crop from the source first.
-2. **禁止改写或覆写用户原头像文件** — deliver only a new partner file.
-3. **禁止把镜像翻转 / 同向朝向 / 1:1 配件复制当成对子解.**
-4. **禁止用人像特写裁切吃掉源图构图级背景.**
-
-**Fidelity axes to lock:** spatial structure, facial detail grammar, brightness, color cast / tone, and **lines / stroke material** — the #1 recurring real failure when users say the style is completely wrong.
-
-The manual also carries a study protocol, prompt skeleton (Appendix A), a 30-second acceptance test (Appendix B), a glossary (Appendix C), a 对子 design workshop, a stroke cookbook, spatial engineering & delivery math, background engineering, worked failure→fix stories, batch mode, and a QA contact-sheet recipe.
-
----
-
-## Sub-skill 2: Photo Style Transfer Poster
-
-**Goal:** from **one** photograph (reference only), deliver **one finished styled image** of the **same moment and space**, with every important person/animal/key prop still fully visible, in a locked print/illustration dialect.
-
-**Two hard locks** are the acceptance gates — subjects and space come before color vibes:
-
-- **Complete important subjects.** Every important person, animal, and pose-critical prop stays **fully in frame with a clear safe margin**, matching the completeness shown in the source. Whitespace is composition, not amputation.
-- **Source spatial structure.** Road/path axis, lamp or primary light, pedestrian-group relations and directions, depth layers, and place identity stay locked — **medium change only**. No element-library recombination.
-
-**Emphatic bans:** **禁止**裁切或缺失原图中的重要主体；**禁止**用"大留白 / 简化背景"当借口裁掉人或动物；**禁止**把原图当元素库改空间；**禁止**成片放入原照片或 50/50 / before-after 对照排版.
-
-**Resolution & aspect:** match the source. Snap to **4:3 only when the source is already near 4:3**. If the generator returns the wrong aspect: regenerate → pad/letterbox → subject-aware crop with margin (never a geometric center-crop through an edge-biased subject).
-
-**Recommendation:** offer a recipe **name** (or a short Chinese activation phrase) — recipe numbers stay internal. Default when unclear: **RISO Editorial**.
+Both sub-skill manuals are deliberately long, and each explains why: short "vibe" skills produce exactly the failures catalogued in the demo atlases below.
 
 ---
 
