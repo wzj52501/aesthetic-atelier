@@ -1,5 +1,7 @@
 # High Aesthetic Image Skills Pack
 
+**English** | [简体中文](README.zh-CN.md)
+
 **One skill — High Aesthetic Image Expert — with two sub-skills**, for high-aesthetic image work. Shipped as `SKILL.md` operator manuals plus the demo image sets that serve as their regression memory.
 
 The pack's voice is **positive locks**: state what to keep and deliver. Emphatic bans appear only where a failure mode recurs in practice.
