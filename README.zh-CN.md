@@ -30,7 +30,8 @@ aesthetic-atelier/
     ├── avatar_demo/        情侣头像组（1L–4L）
     ├── poster_demo1/       风格迁移批次 A（原图 + 9 种风格 + 9 张画幅对齐）
     ├── poster_demo2/       风格迁移批次 B（原图 + 9 种风格 + 9 张画幅对齐）
-    └── bear.jpg            通用任务示例
+    ├── bear.jpg            通用任务示例
+    └── repo-hero-poster.jpg  README 头图（宣传素材，不参与回归）
 ```
 
 **快速跳转：** [技能构成](#技能构成) · [九种配方](#九种配方) · [示例图库](#示例图库) · [生成提示词](#生成提示词) · [安装](#安装) · [共同信条](#共同信条) · [许可证](#许可证)
@@ -121,7 +122,7 @@ aesthetic-atelier/
 
 海岸 / 街道记忆批次。用于练习轴线、景深与完整行人。
 
-> **画幅说明：** 本节的 `style-01`…`style-09` 是 **1280×720（生成器原生，16:9）**，与各自 `raw.jpg` 的画幅不一致 —— 批次 A 的原图≈4:3（1706×1279），批次 B≈1.51（1024×677）。这些图用于**配方方言**对照；对外交付时须按技能的 pad 规程对齐源图画幅（`CORE.md §6c`）。`*_matched.jpg` 是同一张图 letterbox 到原图画幅的版本，做空间对照请用它们。
+> **画幅说明：** 图廊显示的是**画幅对齐**后的 `*_matched.jpg` —— 已 letterbox 到本批 `raw.jpg` 的画幅（批次 A ≈4:3，1706×1279；批次 B ≈1.51，1024×677），所以和原图对照是同一把尺子。同目录下的 `style-01`…`style-09` 原件是**生成器原生 1280×720（16:9）**，只作 `dialect-ref`，其画幅从来不是正确的交付画幅。详见 `CORE.md §6c`。
 
 **原图** — `demo/poster_demo1/raw.jpg`
 
@@ -129,15 +130,15 @@ aesthetic-atelier/
 
 | ① RISO Editorial | ② Old Newsprint | ③ Paper Theatre |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo1/style-01-riso.jpg" width="240"> | <img src="demo/poster_demo1/style-02-newsprint.jpg" width="240"> | <img src="demo/poster_demo1/style-03-paper-theatre.jpg" width="240"> |
+| <img src="demo/poster_demo1/style-01-riso_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-02-newsprint_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-03-paper-theatre_matched.jpg" width="240"> |
 
 | ④ Pressed Flower | ⑤ Travel Journal Sketch | ⑥ Retro Silkscreen |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo1/style-04-pressed-flower.jpg" width="240"> | <img src="demo/poster_demo1/style-05-travel-sketch.jpg" width="240"> | <img src="demo/poster_demo1/style-06-silkscreen.jpg" width="240"> |
+| <img src="demo/poster_demo1/style-04-pressed-flower_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-05-travel-sketch_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-06-silkscreen_matched.jpg" width="240"> |
 
 | ⑦ JP B&W Line | ⑧ Naïve Doodle | ⑨ Photo→Ink Sketch |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo1/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch.jpg" width="240"> |
+| <img src="demo/poster_demo1/style-07-jp-line_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch_matched.jpg" width="240"> |
 
 回归：先对照 `raw.jpg` 与 `style-05` / `style-09`（空间要求最高），再看大留白配方的裁切风险。画幅对齐后的 `style-05-travel-sketch_matched.jpg` 与 `style-09-ink-sketch_matched.jpg` 是这批的 **`gold`** 空间正锚。**⑧ Naïve Doodle** 在这里是 `working-attempt`（F6 —— 行人被简化），不算空间合格。
 
@@ -145,7 +146,7 @@ aesthetic-atelier/
 
 山谷场景，**女性主体居中、背对镜头**，望向山谷 —— 是"完整人形 + 山谷景深 + 同一地点辨识度"的强测试。
 
-> **画幅说明：** 本节的 `style-01`…`style-09` 是 **1280×720（生成器原生，16:9）**，与各自 `raw.jpg` 的画幅不一致 —— 批次 A 的原图≈4:3（1706×1279），批次 B≈1.51（1024×677）。这些图用于**配方方言**对照；对外交付时须按技能的 pad 规程对齐源图画幅（`CORE.md §6c`）。`*_matched.jpg` 是同一张图 letterbox 到原图画幅的版本，做空间对照请用它们。
+> **画幅说明：** 图廊显示的是**画幅对齐**后的 `*_matched.jpg` —— 已 letterbox 到本批 `raw.jpg` 的画幅（批次 A ≈4:3，1706×1279；批次 B ≈1.51，1024×677），所以和原图对照是同一把尺子。同目录下的 `style-01`…`style-09` 原件是**生成器原生 1280×720（16:9）**，只作 `dialect-ref`，其画幅从来不是正确的交付画幅。详见 `CORE.md §6c`。
 
 **原图** — `demo/poster_demo2/raw.jpg`
 
@@ -153,15 +154,15 @@ aesthetic-atelier/
 
 | ① RISO Editorial | ② Old Newsprint | ③ Paper Theatre |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo2/style-01-riso.jpg" width="240"> | <img src="demo/poster_demo2/style-02-newsprint.jpg" width="240"> | <img src="demo/poster_demo2/style-03-paper-theatre.jpg" width="240"> |
+| <img src="demo/poster_demo2/style-01-riso_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-02-newsprint_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-03-paper-theatre_matched.jpg" width="240"> |
 
 | ④ Pressed Flower | ⑤ Travel Journal Sketch | ⑥ Retro Silkscreen |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> | <img src="demo/poster_demo2/style-05-travel-sketch.jpg" width="240"> | <img src="demo/poster_demo2/style-06-silkscreen.jpg" width="240"> |
+| <img src="demo/poster_demo2/style-04-pressed-flower_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-05-travel-sketch_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-06-silkscreen_matched.jpg" width="240"> |
 
 | ⑦ JP B&W Line | ⑧ Naïve Doodle | ⑨ Photo→Ink Sketch |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo2/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch.jpg" width="240"> |
+| <img src="demo/poster_demo2/style-07-jp-line_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch_matched.jpg" width="240"> |
 
 回归：确认背身剪影完整（与原图一样从头顶到衣摆），且九种风格的谷底景深保持不变。画幅对齐后的 `style-05-travel-sketch_matched.jpg` 与 `style-09-ink-sketch_matched.jpg` 是这批的 **`gold`** 空间正锚。**⑧ Naïve Doodle** 在这里是 `fail-example`（F2 —— 秋冬分屏改写了地点身份），绝不能当作空间正例。
 
@@ -213,9 +214,9 @@ aesthetic-atelier/
 
 > 给你一张照片，我想要生成一张印花风格的文艺海报。
 
-| **输入** — `demo/poster_demo2/raw.jpg` | **输出** — `demo/poster_demo2/style-04-pressed-flower.jpg` |
+| **输入** — `demo/poster_demo2/raw.jpg` | **输出** — `demo/poster_demo2/style-04-pressed-flower_matched.jpg` |
 |:---:|:---:|
-| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> |
+| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower_matched.jpg" width="240"> |
 
 同一张照片、同一时刻、同一空间：主体保持完整、布局原地不动，只有媒介变了。把风格名换成上表九种配方中的任意一个即可。
 

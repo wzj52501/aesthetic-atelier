@@ -30,7 +30,8 @@ aesthetic-atelier/
     ├── avatar_demo/        couple-PFP set (1L–4L)
     ├── poster_demo1/       style-transfer batch A (raw + 9 styles + 9 aspect-matched)
     ├── poster_demo2/       style-transfer batch B (raw + 9 styles + 9 aspect-matched)
-    └── bear.jpg            general-brief example
+    ├── bear.jpg            general-brief example
+    └── repo-hero-poster.jpg  README hero banner (promo, not regression material)
 ```
 
 **Jump to:** [The skills](#the-skills) · [The nine recipes](#the-nine-recipes) · [Demo gallery](#demo-gallery) · [Generation prompts](#generation-prompts) · [Installation](#installation) · [Shared doctrine](#shared-doctrine) · [License](#license)
@@ -121,7 +122,7 @@ Study method: open `nL` and lock facing, scale, stroke, face recipe, background,
 
 Coastal / street-memory batch. Practice axis, depth, and full pedestrians.
 
-> **Aspect note:** `style-01`…`style-09` here are **1280×720 (generator-native, 16:9)**. The source `raw.jpg` aspect differs — batch A is ≈4:3 (1706×1279), batch B is ≈1.51 (1024×677). Use these for **recipe dialect**; when shipping, enforce the source aspect via the skill's pad SOP (`CORE.md §6c`). The `*_matched.jpg` companions are the same images letterboxed to the raw aspect — use those for spatial comparison.
+> **Aspect note:** the gallery shows the **aspect-matched** `*_matched.jpg` versions — letterboxed to this batch's `raw.jpg` aspect (batch A ≈4:3 at 1706×1279, batch B ≈1.51 at 1024×677), so comparing them against the source is apples-to-apples. The `style-01`…`style-09` originals sit alongside them and are **generator-native 1280×720 (16:9)**: `dialect-ref` only, and never a correct deliverable aspect. See `CORE.md §6c`.
 
 **Source** — `demo/poster_demo1/raw.jpg`
 
@@ -129,15 +130,15 @@ Coastal / street-memory batch. Practice axis, depth, and full pedestrians.
 
 | ① RISO Editorial | ② Old Newsprint | ③ Paper Theatre |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo1/style-01-riso.jpg" width="240"> | <img src="demo/poster_demo1/style-02-newsprint.jpg" width="240"> | <img src="demo/poster_demo1/style-03-paper-theatre.jpg" width="240"> |
+| <img src="demo/poster_demo1/style-01-riso_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-02-newsprint_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-03-paper-theatre_matched.jpg" width="240"> |
 
 | ④ Pressed Flower | ⑤ Travel Journal Sketch | ⑥ Retro Silkscreen |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo1/style-04-pressed-flower.jpg" width="240"> | <img src="demo/poster_demo1/style-05-travel-sketch.jpg" width="240"> | <img src="demo/poster_demo1/style-06-silkscreen.jpg" width="240"> |
+| <img src="demo/poster_demo1/style-04-pressed-flower_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-05-travel-sketch_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-06-silkscreen_matched.jpg" width="240"> |
 
 | ⑦ JP B&W Line | ⑧ Naïve Doodle | ⑨ Photo→Ink Sketch |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo1/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch.jpg" width="240"> |
+| <img src="demo/poster_demo1/style-07-jp-line_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle_matched.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch_matched.jpg" width="240"> |
 
 Regression: open `raw.jpg` vs `style-05` / `style-09` first (highest spatial bar), then the whitespace-heavy recipes for crop risk. The aspect-matched `style-05-travel-sketch_matched.jpg` and `style-09-ink-sketch_matched.jpg` are this batch's **`gold`** spatial anchors. **⑧ Naïve Doodle** here is kept as a `working-attempt` (F6 — pedestrian groups simplified), not a spatial pass.
 
@@ -145,7 +146,7 @@ Regression: open `raw.jpg` vs `style-05` / `style-09` first (highest spatial bar
 
 Valley scene with a **female subject centered, back to camera**, looking toward the valley — a strong test of full figure, depth to valley, and same-place identity.
 
-> **Aspect note:** `style-01`…`style-09` here are **1280×720 (generator-native, 16:9)**. The source `raw.jpg` aspect differs — batch A is ≈4:3 (1706×1279), batch B is ≈1.51 (1024×677). Use these for **recipe dialect**; when shipping, enforce the source aspect via the skill's pad SOP (`CORE.md §6c`). The `*_matched.jpg` companions are the same images letterboxed to the raw aspect — use those for spatial comparison.
+> **Aspect note:** the gallery shows the **aspect-matched** `*_matched.jpg` versions — letterboxed to this batch's `raw.jpg` aspect (batch A ≈4:3 at 1706×1279, batch B ≈1.51 at 1024×677), so comparing them against the source is apples-to-apples. The `style-01`…`style-09` originals sit alongside them and are **generator-native 1280×720 (16:9)**: `dialect-ref` only, and never a correct deliverable aspect. See `CORE.md §6c`.
 
 **Source** — `demo/poster_demo2/raw.jpg`
 
@@ -153,15 +154,15 @@ Valley scene with a **female subject centered, back to camera**, looking toward 
 
 | ① RISO Editorial | ② Old Newsprint | ③ Paper Theatre |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo2/style-01-riso.jpg" width="240"> | <img src="demo/poster_demo2/style-02-newsprint.jpg" width="240"> | <img src="demo/poster_demo2/style-03-paper-theatre.jpg" width="240"> |
+| <img src="demo/poster_demo2/style-01-riso_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-02-newsprint_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-03-paper-theatre_matched.jpg" width="240"> |
 
 | ④ Pressed Flower | ⑤ Travel Journal Sketch | ⑥ Retro Silkscreen |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> | <img src="demo/poster_demo2/style-05-travel-sketch.jpg" width="240"> | <img src="demo/poster_demo2/style-06-silkscreen.jpg" width="240"> |
+| <img src="demo/poster_demo2/style-04-pressed-flower_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-05-travel-sketch_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-06-silkscreen_matched.jpg" width="240"> |
 
 | ⑦ JP B&W Line | ⑧ Naïve Doodle | ⑨ Photo→Ink Sketch |
 |:---:|:---:|:---:|
-| <img src="demo/poster_demo2/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch.jpg" width="240"> |
+| <img src="demo/poster_demo2/style-07-jp-line_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle_matched.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch_matched.jpg" width="240"> |
 
 Regression: confirm the full back-view silhouette (head to hem as in the source) and unchanged valley depth across all nine styles. The aspect-matched `style-05-travel-sketch_matched.jpg` and `style-09-ink-sketch_matched.jpg` are this batch's **`gold`** spatial anchors. **⑧ Naïve Doodle** here is kept as a `fail-example` (F2 — the autumn/winter split rewrites the place identity). It must never be used as a spatial pass.
 
@@ -213,9 +214,9 @@ The source file is left untouched. The output is a single new portrait, drawn in
 
 > Here's a photo. I want a pressed-flower style literary poster from it.
 
-| **Input** — `demo/poster_demo2/raw.jpg` | **Output** — `demo/poster_demo2/style-04-pressed-flower.jpg` |
+| **Input** — `demo/poster_demo2/raw.jpg` | **Output** — `demo/poster_demo2/style-04-pressed-flower_matched.jpg` |
 |:---:|:---:|
-| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower.jpg" width="240"> |
+| <img src="demo/poster_demo2/raw.jpg" width="240"> | <img src="demo/poster_demo2/style-04-pressed-flower_matched.jpg" width="240"> |
 
 Same photo, same moment and space: the subjects stay complete and the layout stays put — only the medium changes. Swap the style name for any of the nine recipes in the table above.
 
