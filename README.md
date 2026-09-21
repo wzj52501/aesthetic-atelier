@@ -297,11 +297,12 @@ Codex reads `$CWD/.agents/skills`, `$REPO_ROOT/.agents/skills`, `$HOME/.agents/s
 
 ### 3. Make the demos available (optional)
 
-The sub-skills mark the demos as *required reading when available*. They are referenced by pack-relative paths such as `aesthetic-atelier/demo/avatar_demo/`. Because the demo folders sit next to the skills rather than inside them, tell your agent where the pack lives — for example by adding one line to `AGENTS.md` / `CLAUDE.md`:
+The sub-skills mark the demos as *required reading when available*. They are referenced by pack-relative paths such as `aesthetic-atelier/demo/avatar_demo/`. Because the demo folders sit next to the skills rather than inside them, tell your agent where the pack lives — for example by adding this to `AGENTS.md` / `CLAUDE.md`:
 
 ```markdown
-High aesthetic image skills pack is cloned at ~/aesthetic-atelier.
+aesthetic-atelier is cloned at ~/aesthetic-atelier.
 Demo regression sets: ~/aesthetic-atelier/demo/{avatar_demo,poster_demo1,poster_demo2}
+Per-file demo roles: ~/aesthetic-atelier/demo/MANIFEST.md
 ```
 
 Tools that scan recursively (Cursor) can instead take the single whole-pack symlink shown above, which keeps the documented paths valid as-is.

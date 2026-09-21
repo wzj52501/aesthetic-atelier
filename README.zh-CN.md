@@ -297,11 +297,12 @@ Codex 会读取 `$CWD/.agents/skills`、`$REPO_ROOT/.agents/skills`、`$HOME/.ag
 
 ### 3. 让示例图集可用（可选）
 
-两个子技能都把示例标注为"有则可读"。它们以包内相对路径引用，例如 `aesthetic-atelier/demo/avatar_demo/`。由于示例目录与技能目录平级而非嵌套，建议告诉你的 agent 本包在哪 —— 比如在 `AGENTS.md` / `CLAUDE.md` 里加一行：
+两个子技能都把示例标注为"有则可读"。它们以包内相对路径引用，例如 `aesthetic-atelier/demo/avatar_demo/`。由于示例目录与技能目录平级而非嵌套，建议告诉你的 agent 本包在哪 —— 比如在 `AGENTS.md` / `CLAUDE.md` 里加上：
 
 ```markdown
-High aesthetic image skills pack is cloned at ~/aesthetic-atelier.
-Demo regression sets: ~/aesthetic-atelier/demo/{avatar_demo,poster_demo1,poster_demo2}
+aesthetic-atelier 克隆在 ~/aesthetic-atelier。
+示例回归集：~/aesthetic-atelier/demo/{avatar_demo,poster_demo1,poster_demo2}
+每张图的角色：~/aesthetic-atelier/demo/MANIFEST.md
 ```
 
 会递归扫描的工具（Cursor）也可以直接用上面那条整包软链，这样文档里写的路径就原样有效。
