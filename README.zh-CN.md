@@ -337,4 +337,4 @@ head -12 ~/.claude/skills/matching-couple-avatar/SKILL.md
 
 ## 许可证
 
-基于 [MIT License](LICENSE) 发布。Copyright (c) 2026 zijianwang。
+基于 [MIT License](LICENSE) 发布。Copyright (c) 2026 wzj52501。

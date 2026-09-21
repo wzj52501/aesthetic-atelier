@@ -337,4 +337,4 @@ Both sub-skills sit under the same fixed aesthetic core and add their own law. C
 
 ## License
 
-Released under the [MIT License](LICENSE). Copyright (c) 2026 zijianwang.
+Released under the [MIT License](LICENSE). Copyright (c) 2026 wzj52501.
