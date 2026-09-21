@@ -235,13 +235,7 @@ git clone https://github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
 cd ~/aesthetic-atelier
 ```
 
-仓库是 **private**，克隆需要凭据。用 personal access token 认证一次：
-
-```bash
-git clone https://<token>@github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
-```
-
-或者改用 SSH 克隆：
+仓库是公开的，上面这条就够了。也可以走 SSH：
 
 ```bash
 git clone git@github.com:wzj52501/aesthetic-atelier.git ~/aesthetic-atelier

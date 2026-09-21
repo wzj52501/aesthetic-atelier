@@ -235,13 +235,7 @@ git clone https://github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
 cd ~/aesthetic-atelier
 ```
 
-The repository is **private**, so the clone needs credentials. Either authenticate with a personal access token once:
-
-```bash
-git clone https://<token>@github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
-```
-
-or clone over SSH instead:
+The repository is public, so that is all it takes. SSH works too:
 
 ```bash
 git clone git@github.com:wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
