@@ -166,12 +166,9 @@ Relevant entries:
 - `high-aesthetic-image-expert/` — parent aesthetic law
 - `photo-style-transfer-poster/` — unrelated specialty; keep pipelines separate
 
-Agent workflow mirrors:
+**Skill ID.** The folder name is the slug, per the Agent Skills standard: `matching-couple-avatar`. Register the skill under that ID and no other.
 
-- `matching-couple-avatar-2` / `matching-couple-avatar`
-- `aesthetic-atelier/matching-couple-avatar`
-
-Keep these synchronized when the skill updates.
+Do **not** create `-2` (or any suffixed) aliases. A suffixed duplicate is a *different skill* to the router: it will load a stale copy of this manual, drift out of sync, and split the regression memory. One skill, one ID, one folder.
 
 ---
 

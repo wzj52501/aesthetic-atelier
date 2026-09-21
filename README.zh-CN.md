@@ -139,7 +139,7 @@ aesthetic-atelier/
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo1/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch.jpg" width="240"> |
 
-回归：先对照 `raw.jpg` 与 `style-05` / `style-09`（空间要求最高），再看大留白配方的裁切风险。**⑧ Naïve Doodle** 在这里是 `working-attempt`（F6 —— 行人被简化），不算空间合格。
+回归：先对照 `raw.jpg` 与 `style-05` / `style-09`（空间要求最高），再看大留白配方的裁切风险。画幅对齐后的 `style-05-travel-sketch_matched.jpg` 与 `style-09-ink-sketch_matched.jpg` 是这批的 **`gold`** 空间正锚。**⑧ Naïve Doodle** 在这里是 `working-attempt`（F6 —— 行人被简化），不算空间合格。
 
 ### 风格迁移批次 B — `demo/poster_demo2/`
 
@@ -163,7 +163,7 @@ aesthetic-atelier/
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo2/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch.jpg" width="240"> |
 
-回归：确认背身剪影完整（与原图一样从头顶到衣摆），且九种风格的谷底景深保持不变。**⑧ Naïve Doodle** 在这里是 `fail-example`（F2 —— 秋冬分屏改写了地点身份），绝不能当作空间正例。
+回归：确认背身剪影完整（与原图一样从头顶到衣摆），且九种风格的谷底景深保持不变。画幅对齐后的 `style-05-travel-sketch_matched.jpg` 与 `style-09-ink-sketch_matched.jpg` 是这批的 **`gold`** 空间正锚。**⑧ Naïve Doodle** 在这里是 `fail-example`（F2 —— 秋冬分屏改写了地点身份），绝不能当作空间正例。
 
 **失败图鉴 F1–F7：** 留白后人物不完整 · 元素库式空间重写 · 成片里出现原照片或对比排版 · 强行套错画幅 · 字体或裁切线切到人体 · 清理杂物时删掉了人 · 只调代理指标。
 

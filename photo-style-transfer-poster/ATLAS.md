@@ -10,7 +10,7 @@ Demo roles (`source` / `gold` / `dialect-ref` / `fail-example`) are authoritativ
 
 ## 4. Demo atlas — `poster_demo1` / `poster_demo2`
 
-**Role discipline.** `../demo/MANIFEST.md` is authoritative for what each file is. Regression order: `source` first, then the `dialect-ref` files flagged as high spatial bar (⑤ travel-sketch, ⑨ ink-sketch). **Never** list a `fail-example` (batch B `style-08`) as a spatial pass, and never copy a `working-attempt` as a ship target.
+**Role discipline.** `../demo/MANIFEST.md` is authoritative for what each file is. Regression order: `source` first, then the **`gold`** spatial anchors — the aspect-matched **⑤ travel-sketch** and **⑨ ink-sketch** of each batch. A bare `style-05`/`style-09` is only `dialect-ref` (wrong aspect); its `_matched` companion is the one you may treat as a spatial pass. **Never** list a `fail-example` (batch B `style-08`) as a spatial pass, and never copy a `working-attempt` as a ship target.
 
 ### 4.1 Layout
 

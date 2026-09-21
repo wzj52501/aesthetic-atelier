@@ -25,7 +25,7 @@ This skill is the specialty path under High Aesthetic Image Expert for **photo �
 
 **Activation:** user says style transfer / `风格迁移` / named recipe / clear vibe synonym.
 
-Parent: **[High Aesthetic Image Expert](sand-workflow:high-aesthetic-image-expert-2)** (or `high-aesthetic-image-expert`).
+Parent: **[High Aesthetic Image Expert](sand-workflow:high-aesthetic-image-expert)** — folder name `high-aesthetic-image-expert`, which is the slug.
 
 ## Loading protocol (mandatory)
 

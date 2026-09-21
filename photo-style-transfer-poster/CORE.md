@@ -5,7 +5,9 @@ manual so cross-references (`§1.1a`, `§6c`, …) stay valid.
 
 **Demo role discipline.** `demo/MANIFEST.md` is authoritative: only `source` and `gold` are
 positive exemplars. `dialect-ref` teaches the look but proves nothing about aspect or space;
-`working-attempt` and `fail-example` are for gap analysis only.
+`working-attempt` and `fail-example` are for gap analysis only. The poster side's spatial
+**gold** anchors are the aspect-matched `style-05-travel-sketch_matched.jpg` and
+`style-09-ink-sketch_matched.jpg` of each batch.
 
 **Recipe card rules — apply to every card in `recipes/`:**
 

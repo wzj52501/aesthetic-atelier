@@ -139,7 +139,7 @@ Coastal / street-memory batch. Practice axis, depth, and full pedestrians.
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo1/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo1/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo1/style-09-ink-sketch.jpg" width="240"> |
 
-Regression: open `raw.jpg` vs `style-05` / `style-09` first (highest spatial bar), then the whitespace-heavy recipes for crop risk. **⑧ Naïve Doodle** here is kept as a `working-attempt` (F6 — pedestrian groups simplified), not a spatial pass.
+Regression: open `raw.jpg` vs `style-05` / `style-09` first (highest spatial bar), then the whitespace-heavy recipes for crop risk. The aspect-matched `style-05-travel-sketch_matched.jpg` and `style-09-ink-sketch_matched.jpg` are this batch's **`gold`** spatial anchors. **⑧ Naïve Doodle** here is kept as a `working-attempt` (F6 — pedestrian groups simplified), not a spatial pass.
 
 ### Style-transfer batch B — `demo/poster_demo2/`
 
@@ -163,7 +163,7 @@ Valley scene with a **female subject centered, back to camera**, looking toward 
 |:---:|:---:|:---:|
 | <img src="demo/poster_demo2/style-07-jp-line.jpg" width="240"> | <img src="demo/poster_demo2/style-08-naive-doodle.jpg" width="240"> | <img src="demo/poster_demo2/style-09-ink-sketch.jpg" width="240"> |
 
-Regression: confirm the full back-view silhouette (head to hem as in the source) and unchanged valley depth across all nine styles. **⑧ Naïve Doodle** here is kept as a `fail-example` (F2 — the autumn/winter split rewrites the place identity). It must never be used as a spatial pass.
+Regression: confirm the full back-view silhouette (head to hem as in the source) and unchanged valley depth across all nine styles. The aspect-matched `style-05-travel-sketch_matched.jpg` and `style-09-ink-sketch_matched.jpg` are this batch's **`gold`** spatial anchors. **⑧ Naïve Doodle** here is kept as a `fail-example` (F2 — the autumn/winter split rewrites the place identity). It must never be used as a spatial pass.
 
 **Failure atlas F1–F7:** incomplete people after whitespace · element-library spatial rewrite · source photo or comparison layout in frame · forced wrong aspect · type or crop marks cutting anatomy · clutter deletion removing a person · proxy-metric theater.
 

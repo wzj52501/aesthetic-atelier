@@ -22,6 +22,11 @@ One primary role per file. `fail_tags` reference the F-codes in the relevant `AT
 companions are the same image letterboxed to the aspect of that set's `raw`. Neither is a
 statement that 16:9 is correct — see `photo-style-transfer-poster/CORE.md §6c`.
 
+**Poster-side gold.** The poster skill's positive spatial anchors are the aspect-matched
+**⑤ Travel Journal Sketch** and **⑨ Photo→Ink Sketch** of each batch — the two recipes with the
+highest spatial bar. A bare `style-05`/`style-09` is only `dialect-ref` because its aspect is
+wrong; the `_matched` companion is the one that may be used as a spatial pass.
+
 ```yaml
 avatar_demo:
   1L.jpeg:      { role: source }
@@ -52,11 +57,11 @@ poster_demo1:
   style-02-newsprint_matched.jpg:   { role: dialect-ref, notes: "letterboxed to raw aspect r=1.333" }
   style-03-paper-theatre_matched.jpg: { role: dialect-ref, notes: "letterboxed to raw aspect r=1.333" }
   style-04-pressed-flower_matched.jpg: { role: dialect-ref, notes: "letterboxed to raw aspect r=1.333" }
-  style-05-travel-sketch_matched.jpg: { role: dialect-ref, notes: "letterboxed to raw aspect r=1.333" }
+  style-05-travel-sketch_matched.jpg: { role: gold, notes: "spatial gold anchor — highest spatial bar, letterboxed to raw aspect r=1.333" }
   style-06-silkscreen_matched.jpg:  { role: dialect-ref, notes: "letterboxed to raw aspect r=1.333" }
   style-07-jp-line_matched.jpg:     { role: dialect-ref, notes: "letterboxed to raw aspect r=1.333" }
   style-08-naive-doodle_matched.jpg: { role: working-attempt, fail_tags: [F6], notes: "letterboxed to raw aspect r=1.333" }
-  style-09-ink-sketch_matched.jpg:  { role: dialect-ref, notes: "letterboxed to raw aspect r=1.333" }
+  style-09-ink-sketch_matched.jpg:  { role: gold, notes: "spatial gold anchor — highest spatial bar, letterboxed to raw aspect r=1.333" }
 
 poster_demo2:
   raw.jpg:                          { role: source, aspect: "1024x677 ~1.51 (r=1.513)" }
@@ -73,11 +78,11 @@ poster_demo2:
   style-02-newsprint_matched.jpg:   { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
   style-03-paper-theatre_matched.jpg: { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
   style-04-pressed-flower_matched.jpg: { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
-  style-05-travel-sketch_matched.jpg: { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
+  style-05-travel-sketch_matched.jpg: { role: gold, notes: "spatial gold anchor — highest spatial bar, letterboxed to raw aspect r=1.513" }
   style-06-silkscreen_matched.jpg:  { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
   style-07-jp-line_matched.jpg:     { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
   style-08-naive-doodle_matched.jpg: { role: fail-example, fail_tags: [F2], notes: "letterboxed to raw aspect r=1.513" }
-  style-09-ink-sketch_matched.jpg:  { role: dialect-ref, notes: "letterboxed to raw aspect r=1.513" }
+  style-09-ink-sketch_matched.jpg:  { role: gold, notes: "spatial gold anchor — highest spatial bar, letterboxed to raw aspect r=1.513" }
 
 bear.jpg: { role: mood-ref, notes: "romantic meadow reads well; the small tumbling bear from the brief is not really met — not a hard-lock gold" }
 
