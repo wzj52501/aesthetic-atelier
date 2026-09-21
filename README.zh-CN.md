@@ -224,16 +224,30 @@ aesthetic-atelier/
 
 ## 安装
 
-> **TL;DR —— 直接对你的 agent 说 *"install this repo"* 就行。** 它会克隆本包并把技能软链到自己的 skills 目录；Claude Code、Cursor、Codex 各自知道自己的目录在哪。下面是可以手动控制文件落点的完整做法。
+> **TL;DR —— 直接对你的 agent 说 *"install https://github.com/wzj52501/aesthetic-atelier"* 就行。** 它会克隆本包并把技能软链到自己的 skills 目录；Claude Code、Cursor、Codex 各自知道自己的目录在哪。下面是可以手动控制文件落点的完整做法。
 
 每个技能目录都是自包含的：目录名就是技能 slug，`SKILL.md` 里的 YAML frontmatter（`name`、`description`）用于被发现和路由。格式遵循 [Agent Skills](https://agentskills.io) 标准，所以同一批目录可以跨工具使用。
 
 ### 1. 克隆本包
 
 ```bash
-git clone <this-repo-url> ~/aesthetic-atelier
+git clone https://github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
 cd ~/aesthetic-atelier
 ```
+
+仓库是 **private**，克隆需要凭据。用 personal access token 认证一次：
+
+```bash
+git clone https://<token>@github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
+```
+
+或者改用 SSH 克隆：
+
+```bash
+git clone git@github.com:wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
+```
+
+目录可以随意换 —— 下文一律假设是 `~/aesthetic-atelier`。
 
 ### 2. 把技能链进你的工具
 

@@ -224,16 +224,30 @@ Same photo, same moment and space: the subjects stay complete and the layout sta
 
 ## Installation
 
-> **TL;DR — just tell your agent *"install this repo."*** It clones the pack and links the skills into its own skills directory; Claude Code, Cursor, and Codex each know where theirs is. Everything below is the manual version, for when you want to control exactly where the files land.
+> **TL;DR — just tell your agent *"install https://github.com/wzj52501/aesthetic-atelier"*.** It clones the pack and links the skills into its own skills directory; Claude Code, Cursor, and Codex each know where theirs is. Everything below is the manual version, for when you want to control exactly where the files land.
 
 Each skill folder is self-contained: the folder name is the skill slug and `SKILL.md` carries YAML frontmatter (`name`, `description`) used for discovery and routing. The format follows the [Agent Skills](https://agentskills.io) standard, so the same folders work across tools.
 
 ### 1. Clone the pack
 
 ```bash
-git clone <this-repo-url> ~/aesthetic-atelier
+git clone https://github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
 cd ~/aesthetic-atelier
 ```
+
+The repository is **private**, so the clone needs credentials. Either authenticate with a personal access token once:
+
+```bash
+git clone https://<token>@github.com/wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
+```
+
+or clone over SSH instead:
+
+```bash
+git clone git@github.com:wzj52501/aesthetic-atelier.git ~/aesthetic-atelier
+```
+
+Any directory works — the rest of this guide assumes `~/aesthetic-atelier`.
 
 ### 2. Link the skills into your tool
 
